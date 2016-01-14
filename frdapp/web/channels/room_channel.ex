@@ -28,8 +28,8 @@ defmodule Frdapp.RoomChannel do
   #   {:noreply, socket}
   # end
 
-  def handle_in("new:message", msg, socket) do
-    # user = Guardian.Channel.current_resource(socket)
+
+  def handle_in("new:message", msg, socket) do    
     broadcast! socket, "new:message", %{user: msg["user"], body: msg["body"], lat: msg["lat"], lng: msg["lng"]}
     {:noreply, socket}
   end

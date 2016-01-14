@@ -19,7 +19,7 @@ defmodule Frdapp.Mixfile do
   def application do
     [mod: {Frdapp, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :phoenix_pubsub_redis]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,10 +38,8 @@ defmodule Frdapp.Mixfile do
      {:gettext, "~> 0.9"},
      {:guardian, "~> 0.9.0"},
      {:cowboy, "~> 1.0"},
-     {:ueberauth, git: "https://github.com/ueberauth/ueberauth.git", override: true},
-     {:ueberauth_github, "~>0.2.0"},
-     {:ueberauth_identity, "~>0.2.1"},
-     {:ueberauth_slack, "~>0.2.0"}]
+     {:phoenix_pubsub_redis, "~> 1.0.0"},
+   ]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

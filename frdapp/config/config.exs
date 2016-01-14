@@ -12,7 +12,9 @@ config :frdapp, Frdapp.Endpoint,
   secret_key_base: "mWg0N/cDGh4+k7tG9q7VQAQDoHB1LA0JKbGH/n0NZdNNI9nnFJbUEYPLWOHTpfVC",
   render_errors: [accepts: ~w(html json)],
   pubsub: [name: Frdapp.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.Redis,
+            host: "localhost",
+            port: "6379"]
 
 # Configures Elixir's Logger
 config :logger, :console,
